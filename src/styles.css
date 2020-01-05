@@ -30,3 +30,9 @@ body {
   right: 20px;
   color: #dc3545;
 }
+
+.required-field:after {
+  content: " *";
+  color: #dc3545;
+  position: inherit;
+}
