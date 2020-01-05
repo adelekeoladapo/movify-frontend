@@ -35,3 +35,7 @@ p.desc {
 .list-of-movies {
   position: relative;
 }
+
+.card-img-top {
+  height: 150px;
+}

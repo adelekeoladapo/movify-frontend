@@ -12,7 +12,7 @@ import {UtilityService} from '../../services/utility.service';
 })
 export class HomeComponent implements OnInit {
 
-  dataRequest: DataTableRequest = new DataTableRequest(10, 0, 'id', 'DESC');
+  dataRequest: DataTableRequest = new DataTableRequest(9, 0, 'id', 'DESC');
 
   moviesData: MoviesListResponse = new MoviesListResponse();
 
