@@ -25,3 +25,8 @@ body {
 .page-content {
   margin-top: 30px;
 }
+
+.has-feedback .smk-error-msg {
+  right: 20px;
+  color: #dc3545;
+}
