@@ -10,7 +10,17 @@ import {DataTableRequest} from '../dto/DataTableRequest';
 })
 export class DataService {
 
+  static email: string;
+
   constructor(private http: HttpClient) { }
+
+  public static setEmail(email: string) {
+    DataService.email = email;
+  }
+
+  public static getEmail(): string {
+    return DataService.email;
+  }
 
   public getList(url: string, request: DataTableRequest): Observable<any> {
     if (request == null) {

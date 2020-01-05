@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthenticationService} from '../../services/authentication.service';
 import {LoginRequest} from '../../dto/LoginRequest';
 import {Router} from '@angular/router';
+import {DataService} from '../../services/data.service';
 
 declare var $: any;
 declare var toastr: any;
@@ -15,7 +16,7 @@ export class SignInComponent implements OnInit {
 
   loginRequest: LoginRequest = new LoginRequest();
 
-  constructor(private authenticationService: AuthenticationService, private router: Router) { }
+  constructor(private authenticationService: AuthenticationService, private router: Router, private dataService: DataService) { }
 
   ngOnInit() {
   }
@@ -26,7 +27,8 @@ export class SignInComponent implements OnInit {
       this.authenticationService.signIn(this.loginRequest).subscribe(data => {
         if (data.code === 0) {
           localStorage.setItem('token', data.data.token);
-          this.router.navigateByUrl('/list-of-movies');
+          localStorage.setItem('email', data.data.email);
+          location.href = '/movies';
         } else {
           toastr.error(data.message);
         }

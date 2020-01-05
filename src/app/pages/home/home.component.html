@@ -3,7 +3,7 @@
     <h4 class="page-title">List of Movies</h4>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a routerLink="/movies">Home</a></li>
         <li class="breadcrumb-item active" aria-current="page">List</li>
       </ol>
     </nav>
@@ -47,7 +47,7 @@
                 <span class="float-right genres">{{ utils.listArrayValues(data.genres) }}</span>
               </h6>
               <p class="card-text desc">{{ substr(data.tagline, 100) }}</p>
-              <a routerLink="/movie" class="btn btn-primary">Details</a>
+              <a routerLink="/movies/{{ data.slug }}" class="btn btn-primary">Details</a>
             </div>
           </div>
         </div>

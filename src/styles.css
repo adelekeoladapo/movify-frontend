@@ -48,3 +48,39 @@ body {
   text-align: center;
   display: none;
 }
+
+.welcome-note {
+  margin-top: 140px;
+}
+
+.welcome-note h3 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.welcome-note .big-brand {
+  display: block;
+  font-size: 160px;
+}
+
+
+@media only screen and (max-width : 480px) {
+  .welcome-note {
+    margin-top: 20px;
+  }
+
+  .welcome-note h3 {
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .welcome-note .big-brand {
+    display: block;
+    font-size: 100px;
+  }
+
+  .auth-form-container {
+    margin-top: 20px;
+  }
+
+}

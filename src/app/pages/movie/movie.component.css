@@ -3,6 +3,11 @@
   height: 400px;
 }
 
+.movie-player img {
+  height: 100%;
+  width: 100%;
+}
+
 .details-list {
   list-style: none;
   padding: 0;

@@ -8,6 +8,7 @@ import {LoginServiceResponse} from '../dto/LoginServiceResponse';
 import {DataService} from './data.service';
 import {DataTableRequest} from '../dto/DataTableRequest';
 import {MoviesListResponse} from '../dto/MoviesListResponse';
+import {ServiceResponse} from '../dto/ServiceResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,10 @@ export class MovieService {
 
   public getList(req: DataTableRequest) {
     return this.dataService.getList(this.baseUrl, req);
+  }
+
+  public findBySlug(slug: string) {
+    return this.http.get<ServiceResponse>(this.baseUrl + '/slug/' + slug);
   }
 
 

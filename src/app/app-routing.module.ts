@@ -4,6 +4,7 @@ import {SignInComponent} from './pages/sign-in/sign-in.component';
 import {HomeComponent} from './pages/home/home.component';
 import {SignUpComponent} from './pages/sign-up/sign-up.component';
 import {MovieComponent} from './pages/movie/movie.component';
+import {MovieResolver} from './services/custom.resolver';
 
 const routes: Routes = [
   {
@@ -15,12 +16,15 @@ const routes: Routes = [
     component: SignUpComponent
   },
   {
-    path: 'list-of-movies',
+    path: 'movies',
     component: HomeComponent
   },
   {
-    path: 'movie',
-    component: MovieComponent
+    path: 'movies/:slug',
+    component: MovieComponent,
+    resolve: {
+      movie: MovieResolver
+    }
   }
 ];
 

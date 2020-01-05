@@ -22,13 +22,7 @@ export class CustomHttpInterceptor implements CustomHttpInterceptor {
         return next.handle(newReq).pipe(tap(data => {
 
         }, (err: HttpErrorResponse) => {
-          if (err.error.code === 97) {
-            localStorage.clear();
-            console.log('Session Timeout');
-          } else if (err.error.code === 98) {
-            localStorage.clear();
-            console.log('Unauthorized');
-          }
+          console.log(err.message);
         }));
     }
 

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MovieDTO} from '../../dto/MovieDTO';
+import {ActivatedRoute} from '@angular/router';
+import {UtilityService} from '../../services/utility.service';
 
 @Component({
   selector: 'app-movie',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieComponent implements OnInit {
 
-  constructor() { }
+  movie: MovieDTO = new MovieDTO();
+
+  constructor(private route: ActivatedRoute, private utility: UtilityService) { }
 
   ngOnInit() {
+    this.movie = this.route.snapshot.data['movie'].data;
   }
 
 }
