@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { MovieComponent } from './pages/movie/movie.component';
 import {FormsModule} from '@angular/forms';
+import {CustomHttpInterceptor} from './services/CustomHttpInterceptor';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,13 @@ import {FormsModule} from '@angular/forms';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: CustomHttpInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
