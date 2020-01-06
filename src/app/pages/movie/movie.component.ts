@@ -12,7 +12,7 @@ export class MovieComponent implements OnInit {
 
   movie: MovieDTO = new MovieDTO();
 
-  constructor(private route: ActivatedRoute, private utility: UtilityService) { }
+  constructor(private route: ActivatedRoute, public utility: UtilityService) { }
 
   ngOnInit() {
     this.movie = this.route.snapshot.data['movie'].data;

@@ -8,6 +8,11 @@ import {MovieResolver} from './services/custom.resolver';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/sign-in',
+    pathMatch: 'full'
+  },
+  {
     path: 'sign-in',
     component: SignInComponent
   },
